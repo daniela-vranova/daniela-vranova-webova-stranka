@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description:
     "Podmínky objednávky, ceny a platby, dodání překladu, odstoupení od smlouvy a reklamace.",
   alternates: {
-    canonical: "/obchodni-podminky",
+    canonical: "https://soudni-anglictina.cz/obchodni-podminky",
     languages: {
-      cs: "/obchodni-podminky",
-      en: "/en/terms-and-conditions",
-      "x-default": "/obchodni-podminky",
+      cs: "https://soudni-anglictina.cz/obchodni-podminky",
+      en: "https://czech-translator.eu/terms-and-conditions",
+      "x-default": "https://soudni-anglictina.cz/obchodni-podminky",
     },
   },
   /* Stejný vypínač jako kořenový layout (`lib/site.ts`) – dokud web běží

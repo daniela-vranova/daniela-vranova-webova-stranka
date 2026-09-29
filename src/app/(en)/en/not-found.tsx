@@ -12,7 +12,7 @@ export default function EnNotFound() {
         returning to the homepage.
       </p>
 
-      <Button href="/en" className="mt-2">
+      <Button href="/" className="mt-2">
         Back to homepage
       </Button>
     </main>

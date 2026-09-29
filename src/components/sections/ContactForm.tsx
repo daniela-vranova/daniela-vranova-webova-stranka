@@ -161,7 +161,7 @@ export function ContactForm({
         <p className="max-w-[38ch] text-small text-ink-2 [.on-deep_&]:text-on-deep-2">
           {contact.privacyNote}{" "}
           <a
-            href={locale === "en" ? "/en/privacy-policy" : "/ochrana-osobnich-udaju"}
+            href={locale === "en" ? "/privacy-policy" : "/ochrana-osobnich-udaju"}
             className="underline underline-offset-2 transition-colors hover:text-on-deep"
           >
             {locale === "en" ? "Read the privacy policy." : "Přečíst zásady ochrany osobních údajů."}

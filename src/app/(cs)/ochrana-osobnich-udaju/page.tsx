@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description:
     "Jaké osobní údaje na webu zpracovávám, proč to dělám a jaká máte práva podle GDPR.",
   alternates: {
-    canonical: "/ochrana-osobnich-udaju",
+    canonical: "https://soudni-anglictina.cz/ochrana-osobnich-udaju",
     languages: {
-      cs: "/ochrana-osobnich-udaju",
-      en: "/en/privacy-policy",
-      "x-default": "/ochrana-osobnich-udaju",
+      cs: "https://soudni-anglictina.cz/ochrana-osobnich-udaju",
+      en: "https://czech-translator.eu/privacy-policy",
+      "x-default": "https://soudni-anglictina.cz/ochrana-osobnich-udaju",
     },
   },
   /* Stejný vypínač jako kořenový layout (`lib/site.ts`) – dokud web běží

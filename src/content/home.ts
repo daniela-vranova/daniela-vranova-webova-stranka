@@ -135,10 +135,10 @@ export const header = {
     { label: "Časté dotazy", href: "/#faq" },
   ],
   cta: NACENENI,
-  /* Přepínač jazyka. Čeština sedí na kořeni webu, angličtina pod `/en`. */
+  /* Přepínač jazyka. Česká doména soudni-anglictina.cz, anglická czech-translator.eu. */
   locales: [
-    { code: "CS", href: "/", current: true },
-    { code: "EN", href: "/en", current: false },
+    { code: "CS", href: "https://soudni-anglictina.cz", current: true },
+    { code: "EN", href: "https://czech-translator.eu", current: false },
   ],
 } as const;
 

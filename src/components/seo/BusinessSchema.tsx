@@ -22,8 +22,8 @@ import { SITE_URL, absoluteUrl } from "@/lib/site";
 export function BusinessSchema({ locale }: { locale: Locale }) {
   const { brand, reviewLinks } = getContent(locale);
   const en = locale === "en";
-  const url = en ? absoluteUrl("/en") : absoluteUrl("/");
-  const logoUrl = absoluteUrl(`/${en ? "logo-web-en.png" : "logo-web-cz.png"}`);
+  const url = absoluteUrl("/", en ? "en" : "cs");
+  const logoUrl = absoluteUrl(`/${en ? "logo-web-en.png" : "logo-web-cz.png"}`, en ? "en" : "cs");
 
   const schema = {
     "@context": "https://schema.org",

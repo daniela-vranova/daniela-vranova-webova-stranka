@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description:
     "How personal data submitted through this website is collected, used, protected and retained.",
   alternates: {
-    canonical: "/en/privacy-policy",
+    canonical: "https://czech-translator.eu/privacy-policy",
     languages: {
-      cs: "/ochrana-osobnich-udaju",
-      en: "/en/privacy-policy",
-      "x-default": "/ochrana-osobnich-udaju",
+      cs: "https://soudni-anglictina.cz/ochrana-osobnich-udaju",
+      en: "https://czech-translator.eu/privacy-policy",
+      "x-default": "https://soudni-anglictina.cz/ochrana-osobnich-udaju",
     },
   },
   robots: SITE_LAUNCHED ? undefined : { index: false, follow: false },

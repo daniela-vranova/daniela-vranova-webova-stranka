@@ -61,8 +61,8 @@ export function getContent(locale: Locale): Content {
 /** Jazyky v přepínači. Pořadí drží pořadí v hlavičce. */
 export const LOCALES: readonly Locale[] = ["cs", "en"];
 
-/** Kořen mutace. Čeština sedí na kořeni webu, angličtina pod `/en`. */
+/** Kořen mutace. Obě mutace sedí na kořeni své příslušné domény. */
 export const localeHome: Record<Locale, string> = {
   cs: "/",
-  en: "/en",
+  en: "/",
 };

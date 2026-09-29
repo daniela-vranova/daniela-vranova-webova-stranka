@@ -1,78 +1,45 @@
 import type { MetadataRoute } from "next";
-import { SITE_LAUNCHED, absoluteUrl } from "@/lib/site";
+import { headers } from "next/headers";
+import {
+  SITE_LAUNCHED,
+  CS_SITE_URL,
+  EN_SITE_URL,
+  EN_DOMAIN,
+} from "@/lib/site";
+
+export const dynamic = "force-dynamic";
 
 /**
  * sitemap.xml (Next konvence `app/sitemap.ts`).
  *
- * Dvě URL: česká mutace na kořeni, anglická pod `/en`. `alternates.languages`
- * říká vyhledávači, že jde o překlady téže stránky (hreflang v sitemapě).
- *
- * Dokud web běží jako náhled, vrací prázdno – nemá smysl nabízet crawlerům
- * mapu webu, který je celý za `disallow`.
+ * Každá doména potřebuje vlastní sitemap.xml. Podle hlavičky Host
+ * vrátí adresu příslušné domény (česká: soudni-anglictina.cz, anglická: czech-translator.eu).
+ * Web je jednostránkový, takže sitemapa má vždy jednu URL s hreflang alternatami.
  */
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (!SITE_LAUNCHED) return [];
 
-  const languages = {
-    cs: absoluteUrl("/"),
-    en: absoluteUrl("/en"),
-    "x-default": absoluteUrl("/"),
-  };
-  const privacyLanguages = {
-    cs: absoluteUrl("/ochrana-osobnich-udaju"),
-    en: absoluteUrl("/en/privacy-policy"),
-    "x-default": absoluteUrl("/ochrana-osobnich-udaju"),
-  };
-  const termsLanguages = {
-    cs: absoluteUrl("/obchodni-podminky"),
-    en: absoluteUrl("/en/terms-and-conditions"),
-    "x-default": absoluteUrl("/obchodni-podminky"),
-  };
-  const lastModified = new Date();
+  const headersList = await headers();
+  const rawHost =
+    headersList.get("x-forwarded-host") ?? headersList.get("host") ?? "";
+  const host = rawHost.split(":")[0].replace(/^www\./, "");
+
+  const isEn = host === EN_DOMAIN;
+  const url = isEn ? EN_SITE_URL : CS_SITE_URL;
 
   return [
     {
-      url: absoluteUrl("/"),
-      lastModified,
+      url,
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
-      alternates: { languages },
-    },
-    {
-      url: absoluteUrl("/en"),
-      lastModified,
-      changeFrequency: "monthly",
-      priority: 0.8,
-      alternates: { languages },
-    },
-    /* Právní podstránky v české i anglické mutaci. */
-    {
-      url: absoluteUrl("/ochrana-osobnich-udaju"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.3,
-      alternates: { languages: privacyLanguages },
-    },
-    {
-      url: absoluteUrl("/obchodni-podminky"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.3,
-      alternates: { languages: termsLanguages },
-    },
-    {
-      url: absoluteUrl("/en/privacy-policy"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.3,
-      alternates: { languages: privacyLanguages },
-    },
-    {
-      url: absoluteUrl("/en/terms-and-conditions"),
-      lastModified,
-      changeFrequency: "yearly",
-      priority: 0.3,
-      alternates: { languages: termsLanguages },
+      alternates: {
+        languages: {
+          cs: CS_SITE_URL,
+          en: EN_SITE_URL,
+          "x-default": CS_SITE_URL,
+        },
+      },
     },
   ];
 }

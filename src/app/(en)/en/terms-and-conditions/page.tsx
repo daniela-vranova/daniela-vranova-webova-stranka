@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description:
     "Terms covering quotes, orders, payment, delivery, cancellation, complaints and confidentiality.",
   alternates: {
-    canonical: "/en/terms-and-conditions",
+    canonical: "https://czech-translator.eu/terms-and-conditions",
     languages: {
-      cs: "/obchodni-podminky",
-      en: "/en/terms-and-conditions",
-      "x-default": "/obchodni-podminky",
+      cs: "https://soudni-anglictina.cz/obchodni-podminky",
+      en: "https://czech-translator.eu/terms-and-conditions",
+      "x-default": "https://soudni-anglictina.cz/obchodni-podminky",
     },
   },
   robots: SITE_LAUNCHED ? undefined : { index: false, follow: false },

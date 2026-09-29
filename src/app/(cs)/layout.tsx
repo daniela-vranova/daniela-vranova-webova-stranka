@@ -24,8 +24,12 @@ export const metadata: Metadata = {
   title: "Překlady Vránová – soudní překlady a tlumočení z angličtiny",
   description,
   alternates: {
-    canonical: "/",
-    languages: { cs: "/", en: "/en", "x-default": "/" },
+    canonical: "https://soudni-anglictina.cz",
+    languages: {
+      cs: "https://soudni-anglictina.cz",
+      en: "https://czech-translator.eu",
+      "x-default": "https://soudni-anglictina.cz",
+    },
   },
   openGraph: {
     type: "website",

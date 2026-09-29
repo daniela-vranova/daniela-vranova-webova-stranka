@@ -2,17 +2,17 @@
 
 import { useEffect, useState } from "react";
 import Script from "next/script";
-import { SITE_URL } from "@/lib/site";
+import { CS_DOMAIN, EN_DOMAIN } from "@/lib/site";
 
 const scriptUrl = process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL;
-const productionHost = new URL(SITE_URL).hostname;
+const productionHosts = [CS_DOMAIN, EN_DOMAIN];
 
 /** Plausible poskytuje každému webu vlastní URL skriptu v nastavení účtu. */
 export function Analytics() {
   const [onProductionDomain, setOnProductionDomain] = useState(false);
 
   useEffect(() => {
-    setOnProductionDomain(window.location.hostname === productionHost);
+    setOnProductionDomain(productionHosts.includes(window.location.hostname.replace(/^www\./, "")));
   }, []);
 
   if (!scriptUrl || !onProductionDomain) return null;

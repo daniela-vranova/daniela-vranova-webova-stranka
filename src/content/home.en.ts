@@ -24,10 +24,8 @@
  * Tone of voice zůstává stejný: první osoba jednotného čísla, krátké věty,
  * konkrétní čísla místo přídavných jmen, žádný "team of professionals".
  *
- * Kotvy (`href: "/en#sluzby"`) se nepřekládají — `id` sekcí jsou v komponentách
- * a jsou pro obě mutace společné. Prefix `/en` je nutný, protože obě mutace
- * teď mají i podstránky mimo homepage (Ochrana osobních údajů, Obchodní
- * podmínky) — bez cesty před `#` by odkaz z podstránky nikam nescrolloval.
+ * Kotvy (`href: "/#sluzby"`) se nepřekládají — `id` sekcí jsou v komponentách
+ * a jsou pro obě mutace společné.
  * ---------------------------------------------------------------------------
  */
 
@@ -67,7 +65,7 @@ export const legal = {
     "Sole trader (self-employed) registered in the Czech Trade Licensing Register. Not registered for VAT.",
 } as const;
 
-const QUOTE = { label: "Free, no-obligation quote", href: "/en#kontakt" };
+const QUOTE = { label: "Free, no-obligation quote", href: "/#kontakt" };
 
 const QUALIFICATIONS = {
   ministry: {
@@ -93,16 +91,16 @@ export const reviewLinks = [
 
 export const header = {
   nav: [
-    { label: "Translations", href: "/en#sluzby" },
-    { label: "Interpreting", href: "/en#tlumoceni" },
-    { label: "Certification", href: "/en#varianty" },
-    { label: "Price & turnaround", href: "/en#cena" },
-    { label: "FAQ", href: "/en#faq" },
+    { label: "Translations", href: "/#sluzby" },
+    { label: "Interpreting", href: "/#tlumoceni" },
+    { label: "Certification", href: "/#varianty" },
+    { label: "Price & turnaround", href: "/#cena" },
+    { label: "FAQ", href: "/#faq" },
   ],
   cta: QUOTE,
   locales: [
-    { code: "CS", href: "/", current: false },
-    { code: "EN", href: "/en", current: true },
+    { code: "CS", href: "https://soudni-anglictina.cz", current: false },
+    { code: "EN", href: "https://czech-translator.eu", current: true },
   ],
 } as const;
 
@@ -128,8 +126,8 @@ export const hero = {
   description:
     "Certified translations in hard-copy or electronic form, plus professional interpreting.\nThe price and deadline are agreed in advance.",
   primaryCta: QUOTE,
-  translationsCta: { label: "Translations", href: "/en#sluzby" },
-  interpretingCta: { label: "Interpreting", href: "/en#tlumoceni" },
+  translationsCta: { label: "Translations", href: "/#sluzby" },
+  interpretingCta: { label: "Interpreting", href: "/#tlumoceni" },
   photoAlt: "Mgr. Daniela Vránová, certified translator and interpreter",
 } as const;
 
@@ -704,24 +702,24 @@ export const footer = {
       id: "sluzby",
       title: "Services",
       links: [
-        { label: "Document types", href: "/en#sluzby" },
-        { label: "Hard-copy translation", href: "/en#varianty" },
-        { label: "Electronic translation", href: "/en#varianty" },
-        { label: "Interpreting", href: "/en#tlumoceni" },
+        { label: "Document types", href: "/#sluzby" },
+        { label: "Hard-copy translation", href: "/#varianty" },
+        { label: "Electronic translation", href: "/#varianty" },
+        { label: "Interpreting", href: "/#tlumoceni" },
       ],
     },
     {
       id: "informace",
       title: "Information",
       links: [
-        { label: "Price & turnaround", href: "/en#cena" },
-        { label: "How it works", href: "/en#proces" },
-        { label: "FAQ", href: "/en#faq" },
+        { label: "Price & turnaround", href: "/#cena" },
+        { label: "How it works", href: "/#proces" },
+        { label: "FAQ", href: "/#faq" },
         {
           label: "Privacy policy",
-          href: "/en/privacy-policy",
+          href: "/privacy-policy",
         },
-        { label: "Terms & conditions", href: "/en/terms-and-conditions" },
+        { label: "Terms & conditions", href: "/terms-and-conditions" },
       ],
     },
   ],
@@ -740,15 +738,15 @@ export const footer = {
   copyright: "© 2026 Mgr. Daniela Vránová",
   privacy: {
     label: "Privacy policy",
-    href: "/en/privacy-policy",
+    href: "/privacy-policy",
   },
   terms: {
     label: "Terms & conditions",
-    href: "/en/terms-and-conditions",
+    href: "/terms-and-conditions",
   },
 } as const;
 
 export const stickyBar = {
   call: { label: "Call", href: brand.phone.href },
-  form: { label: "Free quote", href: "/en#kontakt" },
+  form: { label: "Free quote", href: "/#kontakt" },
 } as const;

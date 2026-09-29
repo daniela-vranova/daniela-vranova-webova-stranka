@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { RootShell } from "@/components/layout/RootShell";
-import { SITE_URL, SITE_LAUNCHED } from "@/lib/site";
+import { EN_SITE_URL, SITE_LAUNCHED } from "@/lib/site";
 import "../globals.css";
 
 /**
@@ -13,19 +13,23 @@ const description =
 const title = "English Translator & Interpreter in Prague | Daniela Vránová";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
+  metadataBase: new URL(EN_SITE_URL),
   title,
   description,
   alternates: {
-    canonical: "/en",
-    languages: { cs: "/", en: "/en", "x-default": "/" },
+    canonical: "https://czech-translator.eu",
+    languages: {
+      cs: "https://soudni-anglictina.cz",
+      en: "https://czech-translator.eu",
+      "x-default": "https://soudni-anglictina.cz",
+    },
   },
   openGraph: {
     type: "website",
     locale: "en_GB",
     alternateLocale: "cs_CZ",
     siteName: "Daniela Vránová Translations",
-    url: "/en",
+    url: "https://czech-translator.eu",
     title,
     description,
   },

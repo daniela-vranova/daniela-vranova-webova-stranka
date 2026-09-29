@@ -112,7 +112,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
           */}
           <div
             className={cn(
-              "flex items-center justify-between lg:grid lg:grid-cols-[1fr_auto_1fr] lg:gap-6 transition-all duration-300 ease-micro",
+              "flex items-center justify-between xl:grid xl:grid-cols-[1fr_auto_1fr] xl:gap-6 transition-all duration-300 ease-micro",
               scrolled || menuOpen
                 ? "py-3 min-h-[var(--header-h-scrolled)]"
                 : "py-4 sm:py-5 min-h-[var(--header-h)]",
@@ -131,7 +131,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
 
             <nav
               aria-label={ui.nav.main}
-              className="col-start-2 hidden justify-self-center lg:block"
+              className="col-start-2 hidden justify-self-center xl:block"
             >
               <ul className="flex items-center gap-8">
                 {header.nav.map((item) => (
@@ -157,7 +157,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                 <LocaleSwitch locale={locale} />
               </div>
 
-              <div className="hidden lg:block">
+              <div className="hidden xl:block">
                 <Button
                   href={header.cta.href}
                   size="sm"
@@ -175,7 +175,7 @@ export function SiteHeader({ locale }: { locale: Locale }) {
                 aria-label={ui.nav.open}
                 tabIndex={menuOpen ? -1 : 0}
                 onClick={() => setMenuOpen(true)}
-                className="flex size-10 items-center justify-center text-white lg:hidden"
+                className="flex size-10 items-center justify-center text-white xl:hidden"
               >
                 <MenuIcon open={false} />
               </button>
@@ -239,7 +239,7 @@ const CTA_DELAY_S = 0.6;
  * (`.menu-panel` / `.menu-item` v globals.css).
  *
  * Dřív to skládal GSAP timeline. Kvůli němu se knihovna dynamicky importovala
- * při každém načtení stránky — i na desktopu, kde je panel `lg:hidden` a nikdy
+ * při každém načtení stránky — i na desktopu, kde je panel `xl:hidden` a nikdy
  * se nezobrazí. Přechody to zvládnou stejně: panel jemně najede, položky se
  * vysypou zdola se stagerem a jako poslední CTA. Zavírání jede na ~65 % času,
  * tedy hbitěji než otevírání, přesně jako původní `timeScale(1 / 0.65)`.
@@ -283,7 +283,7 @@ function MobileMenu({
        * působit jako přímé pokračování hlavičky, ne jako jiná plocha webu.
        * `on-deep` na kořeni aktivuje bílou textovou sadu pro potomky.
        */
-      className="menu-panel on-deep fixed inset-0 z-overlay flex flex-col overflow-y-auto bg-deep/80 backdrop-blur-xl backdrop-saturate-150 lg:hidden"
+      className="menu-panel on-deep fixed inset-0 z-overlay flex flex-col overflow-y-auto bg-deep/80 backdrop-blur-xl backdrop-saturate-150 xl:hidden"
       style={{
         paddingTop: "env(safe-area-inset-top)",
         paddingBottom: "env(safe-area-inset-bottom)",

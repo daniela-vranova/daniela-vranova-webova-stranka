@@ -1,30 +1,28 @@
-import Script from "next/script";
+"use client";
 
-/**
- * ---------------------------------------------------------------------------
- * ANALYTIKA – Plausible
- * ---------------------------------------------------------------------------
- * Plausible běží bez cookies a bez osobních údajů, takže nepotřebuje cookie
- * lištu ani souhlas (GDPR v pořádku) – sedí k webu, který jinak nic
- * netrackuje.
- *
- * Skript se načte jen když je nastavená proměnná
- * `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` (např. "soudni-anglictina.cz"). Bez ní
- * komponenta nevykreslí nic, takže lokální běh i náhled zůstávají čisté
- * a analytika se zapne až tím, že se doména doplní do prostředí (Netlify /
- * `.env`). Do té doby je to prázdný slot.
- * ---------------------------------------------------------------------------
- */
+import { useEffect, useState } from "react";
+import Script from "next/script";
+import { SITE_URL } from "@/lib/site";
+
+const scriptUrl = process.env.NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL;
+const productionHost = new URL(SITE_URL).hostname;
+
+/** Plausible poskytuje každému webu vlastní URL skriptu v nastavení účtu. */
 export function Analytics() {
-  const domain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN;
-  if (!domain) return null;
+  const [onProductionDomain, setOnProductionDomain] = useState(false);
+
+  useEffect(() => {
+    setOnProductionDomain(window.location.hostname === productionHost);
+  }, []);
+
+  if (!scriptUrl || !onProductionDomain) return null;
 
   return (
-    <Script
-      defer
-      data-domain={domain}
-      src="https://plausible.io/js/script.js"
-      strategy="afterInteractive"
-    />
+    <>
+      <Script id="plausible-init" strategy="afterInteractive">
+        {`window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};plausible.init()`}
+      </Script>
+      <Script src={scriptUrl} strategy="afterInteractive" />
+    </>
   );
 }

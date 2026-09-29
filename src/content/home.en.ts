@@ -124,7 +124,7 @@ export const hero = {
    * překonanému 2. kolu CS textu.
    */
   title:
-    "Certified English translations and interpreting. Handled with care.",
+    "Certified English translations\nand interpreting.\nHandled with care.",
   description:
     "Certified translations in hard-copy or electronic form, plus professional interpreting.\nThe price and deadline are agreed in advance.",
   primaryCta: QUOTE,

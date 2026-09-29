@@ -189,8 +189,9 @@ Co je hotové:
   je jen „Praha 3" + oblast působnosti, žádná ulice (klientčino přání).
 - **Favicon** — `app/icon.svg` (navy plocha s křivkou z loga).
 - **Analytika** — `components/Analytics.tsx` načte Plausible jen když je
-  nastavená `NEXT_PUBLIC_PLAUSIBLE_DOMAIN`. Bez cookies, bez souhlasu. Do té
-  doby prázdný slot.
+  nastavená `NEXT_PUBLIC_PLAUSIBLE_SCRIPT_URL` na adresu skriptu daného webu
+  z Plausible a návštěvník je na hlavní doméně. Náhledy a lokální běh se
+  neměří. Po nasazení je potřeba ověřit příchozí návštěvu v účtu Plausible.
 
 ## Co web zatím nemá
 

@@ -10,12 +10,13 @@
  * je čerpají přímo z `legal` v `home.ts`, aby existoval jediný zdroj pravdy
  * shodný s patičkou.
  *
- * Datum účinnosti (`updated`) je jeden literál použitý na obou stránkách;
- * při obsahové revizi dokumentu se mění na jednom místě.
+ * Každý dokument má vlastní datum účinnosti, aby revize obchodních podmínek
+ * neměnila datum zásad ochrany osobních údajů.
  * ---------------------------------------------------------------------------
  */
 
-const EFFECTIVE_DATE = "18. 9. 2026";
+const PRIVACY_EFFECTIVE_DATE = "28. 9. 2026";
+const TERMS_EFFECTIVE_DATE = "28. 9. 2026";
 
 export type LegalSection = {
   id: string;
@@ -37,7 +38,7 @@ export type LegalDocument = {
 export const privacyPolicy: LegalDocument = {
   eyebrow: "Právní informace",
   title: "Zásady zpracování osobních údajů",
-  updated: EFFECTIVE_DATE,
+  updated: PRIVACY_EFFECTIVE_DATE,
   intro: [
     "Tyto zásady popisují, jaké osobní údaje na webu soudni-anglictina.cz a czech-translator.eu zpracovávám, proč to dělám a jaká v souvislosti s tím máte práva. Řídí se nařízením Evropského parlamentu a Rady (EU) 2016/679 (GDPR) a zákonem č. 110/2019 Sb., o zpracování osobních údajů.",
   ],
@@ -70,7 +71,7 @@ export const privacyPolicy: LegalDocument = {
       id: "cookies",
       title: "Cookies a analytika",
       paragraphs: [
-        "Tento web nepoužívá žádné cookies. Návštěvnost měřím nástrojem Plausible Analytics, který funguje bez cookies a bez sledování jednotlivých návštěvníků – data zpracovává souhrnně a anonymně, takže vás z návštěvy webu nedokážu identifikovat. Tento způsob měření podle GDPR ani zákona o elektronických komunikacích nevyžaduje váš souhlas. Písma na webu se navíc načítají z vlastní domény, ne z Google Fonts, takže k přenosu údajů ke Googlu nedochází ani jen kvůli zobrazení textu.",
+        "Tento web nepoužívá cookies pro měření návštěvnosti. Pokud je měření zapnuté, používám Plausible Analytics, který zpracovává souhrnná data o návštěvách bez sledování jednotlivých návštěvníků. Písma se načítají z vlastní domény, ne z Google Fonts.",
       ],
     },
     {
@@ -113,7 +114,7 @@ export const privacyPolicy: LegalDocument = {
       id: "zaverem",
       title: "Závěrečná ustanovení",
       paragraphs: [
-        `Tyto zásady mohu čas od času upravit, například při změně zákona nebo při změně toho, jak web funguje. Aktuální verzi vždy najdete na této stránce. Tyto zásady jsou účinné od ${EFFECTIVE_DATE}.`,
+        `Tyto zásady mohu čas od času upravit, například při změně zákona nebo při změně toho, jak web funguje. Aktuální verzi vždy najdete na této stránce. Tyto zásady jsou účinné od ${PRIVACY_EFFECTIVE_DATE}.`,
       ],
     },
   ],
@@ -122,7 +123,7 @@ export const privacyPolicy: LegalDocument = {
 export const termsAndConditions: LegalDocument = {
   eyebrow: "Právní informace",
   title: "Obchodní podmínky",
-  updated: EFFECTIVE_DATE,
+  updated: TERMS_EFFECTIVE_DATE,
   intro: [
     "Tyto obchodní podmínky platí pro objednávky soudních překladů a tlumočení, které si u mě sjednáte telefonicky, e-mailem nebo přes poptávkový formulář na webu soudni-anglictina.cz. Řídí se zákonem č. 89/2012 Sb., občanský zákoník, a jste-li spotřebitel, i zákonem č. 634/1992 Sb., o ochraně spotřebitele.",
   ],
@@ -173,8 +174,9 @@ export const termsAndConditions: LegalDocument = {
       id: "odstoupeni",
       title: "Odstoupení od smlouvy",
       paragraphs: [
-        "Jste-li spotřebitel a smlouvu jsme uzavřeli na dálku – telefonicky, e-mailem nebo přes web –, máte podle § 1829 občanského zákoníku obecně právo odstoupit od smlouvy do 14 dnů bez udání důvodu. Toto právo se ale podle § 1837 písm. d) a a) občanského zákoníku nevztahuje na dodávku zboží nebo služby upravené podle vašich požadavků nebo pro vaši osobu – a soudní překlad konkrétního dokumentu je přesně takový případ. Požádáte-li mě výslovně, abych s vyhotovením překladu začala ještě před uplynutím 14denní lhůty, a já s plněním před jejím koncem skončím, právo na odstoupení podle § 1837 písm. a) zaniká.",
-        "Než na zakázce začnu pracovat, můžete objednávku kdykoli bezplatně zrušit. Zrušíte-li zakázku poté, co jsem na ní začala pracovat, mám nárok na úhradu již vykonané práce.",
+        "Jste-li spotřebitel a smlouvu o překladu nebo tlumočení uzavřeme na dálku – například e-mailem nebo telefonicky –, máte obecně právo od ní bez udání důvodu odstoupit do 14 dnů od jejího uzavření. Samotná skutečnost, že jde o překlad konkrétního dokumentu, toto právo automaticky nevylučuje.",
+        "Před uplynutím této lhůty začnu službu poskytovat jen na vaši výslovnou žádost. Předem vás informuji, že pokud poté odstoupíte, zaplatíte poměrnou část sjednané ceny za službu poskytnutou do okamžiku odstoupení. Jestliže na vaši výslovnou žádost službu v této lhůtě poskytnu v plném rozsahu a předem vás poučím o důsledku, právo na odstoupení zaniká. Bez výslovné žádosti o dřívější zahájení služby vám za práci vykonanou v této lhůtě při odstoupení poměrnou úhradu neúčtuji.",
+        "Odstoupení mi můžete oznámit e-mailem na daniela.vranova@seznam.cz nebo dopisem na adresu uvedenou výše. Stačí jednoznačně uvést, že odstupujete od smlouvy, a identifikovat zakázku; důvod uvádět nemusíte.",
       ],
     },
     {
@@ -202,7 +204,7 @@ export const termsAndConditions: LegalDocument = {
       id: "zaverecna",
       title: "Závěrečná ustanovení",
       paragraphs: [
-        `Právní vztahy těmito podmínkami neupravené se řídí právním řádem České republiky, zejména občanským zákoníkem a zákonem o ochraně spotřebitele. Podmínky mohu přiměřeně upravovat, například při změně právních předpisů; na již potvrzenou zakázku se ale vždy použije znění platné v okamžiku jejího potvrzení. Tyto obchodní podmínky jsou účinné od ${EFFECTIVE_DATE}.`,
+        `Právní vztahy těmito podmínkami neupravené se řídí právním řádem České republiky, zejména občanským zákoníkem a zákonem o ochraně spotřebitele. Podmínky mohu přiměřeně upravovat, například při změně právních předpisů; na již potvrzenou zakázku se ale vždy použije znění platné v okamžiku jejího potvrzení. Tyto obchodní podmínky jsou účinné od ${TERMS_EFFECTIVE_DATE}.`,
       ],
     },
   ],

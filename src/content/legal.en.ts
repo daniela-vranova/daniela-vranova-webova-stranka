@@ -1,11 +1,12 @@
 import type { LegalDocument } from "./legal";
 
-const EFFECTIVE_DATE = "18 September 2026";
+const PRIVACY_EFFECTIVE_DATE = "28 September 2026";
+const TERMS_EFFECTIVE_DATE = "28 September 2026";
 
 export const privacyPolicyEn: LegalDocument = {
   eyebrow: "Legal information",
   title: "Privacy policy",
-  updated: EFFECTIVE_DATE,
+  updated: PRIVACY_EFFECTIVE_DATE,
   intro: [
     "This policy explains what personal data I process through soudni-anglictina.cz and czech-translator.eu, why I process it and what rights you have. It is governed by Regulation (EU) 2016/679 (the GDPR) and Czech Act No. 110/2019 Coll., on the Processing of Personal Data.",
   ],
@@ -38,7 +39,7 @@ export const privacyPolicyEn: LegalDocument = {
       id: "cookies",
       title: "Cookies and analytics",
       paragraphs: [
-        "This website does not use tracking cookies. I measure aggregate website traffic using Plausible Analytics, which operates without cookies and does not track individual visitors. Fonts are served from the website itself rather than loaded from Google Fonts.",
+        "This website does not use cookies to measure visits. If analytics is enabled, I use Plausible Analytics to process aggregate visit data without tracking individual visitors. Fonts are served from the website itself rather than loaded from Google Fonts.",
       ],
     },
     {
@@ -81,7 +82,7 @@ export const privacyPolicyEn: LegalDocument = {
       id: "updates",
       title: "Updates to this policy",
       paragraphs: [
-        `I may update this policy when legislation or the way the website operates changes. The current version will always be available on this page. This policy is effective from ${EFFECTIVE_DATE}.`,
+        `I may update this policy when legislation or the way the website operates changes. The current version will always be available on this page. This policy is effective from ${PRIVACY_EFFECTIVE_DATE}.`,
       ],
     },
   ],
@@ -90,7 +91,7 @@ export const privacyPolicyEn: LegalDocument = {
 export const termsAndConditionsEn: LegalDocument = {
   eyebrow: "Legal information",
   title: "Terms and conditions",
-  updated: EFFECTIVE_DATE,
+  updated: TERMS_EFFECTIVE_DATE,
   intro: [
     "These terms apply to certified translation and interpreting services ordered from me by telephone, e-mail or through the enquiry form on soudni-anglictina.cz. The contractual relationship is governed by Czech law, particularly Act No. 89/2012 Coll., the Czech Civil Code, and, for consumers, Act No. 634/1992 Coll., on Consumer Protection.",
   ],
@@ -141,8 +142,9 @@ export const termsAndConditionsEn: LegalDocument = {
       id: "withdrawal",
       title: "Cancellation and consumer withdrawal rights",
       paragraphs: [
-        "If you are a consumer and the contract is concluded at a distance, Czech law generally gives you 14 days to withdraw. Statutory exceptions may apply to a service or product prepared to your individual requirements. If you expressly ask me to begin providing the service before the withdrawal period expires, your right to withdraw may be affected once the service has been fully performed. The application of these rules depends on the particular assignment and applicable law.",
-        "You may cancel the order free of charge before I begin work. If you cancel after work has started, I may charge a proportionate amount for work already completed.",
+        "If you are a consumer and we conclude a translation or interpreting contract at a distance, for example by email or telephone, you generally have 14 days from the conclusion of the contract to withdraw without giving a reason. The fact that a translation concerns your particular document does not, by itself, remove this right.",
+        "I will begin providing the service before the end of that period only at your express request. I will inform you in advance that, if you then withdraw, you must pay a proportionate part of the agreed price for the service provided up to that point. If, at your express request, I fully perform the service during the withdrawal period and inform you of the consequence beforehand, your right to withdraw ends. If you did not expressly request an early start, I will not charge you a proportionate amount for work done during that period if you withdraw.",
+        "You can notify me of your withdrawal by email at daniela.vranova@seznam.cz or by post at the address stated above. Clearly state that you are withdrawing from the contract and identify the assignment; you do not need to give a reason.",
       ],
     },
     {
@@ -170,7 +172,7 @@ export const termsAndConditionsEn: LegalDocument = {
       id: "final",
       title: "Final provisions",
       paragraphs: [
-        `Matters not covered by these terms are governed by Czech law. I may update these terms when legislation or my services change, but an accepted assignment is governed by the version in force when the order was confirmed. These terms are effective from ${EFFECTIVE_DATE}.`,
+        `Matters not covered by these terms are governed by Czech law. I may update these terms when legislation or my services change, but an accepted assignment is governed by the version in force when the order was confirmed. These terms are effective from ${TERMS_EFFECTIVE_DATE}.`,
       ],
     },
   ],

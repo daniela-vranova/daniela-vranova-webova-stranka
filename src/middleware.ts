@@ -3,6 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 const CS_HOST = "soudni-anglictina.cz";
 const EN_HOST = "czech-translator.eu";
 
+// Tento repozitář nasazuje jen anglickou verzi: kořen se na jakékoli doméně
+// (i na *.vercel.app) otevře v EN bez změny URL.
+const EN_ONLY = true;
+
 export function middleware(req: NextRequest) {
   const host = (req.headers.get("x-forwarded-host") ?? req.headers.get("host") ?? "")
     .split(":")[0]
@@ -17,12 +21,12 @@ export function middleware(req: NextRequest) {
   }
 
   // kořen anglické domény zobrazí anglickou verzi bez změny URL
-  if (host === EN_HOST && pathname === "/") {
+  if ((EN_ONLY || host === EN_HOST) && pathname === "/") {
     return NextResponse.rewrite(new URL("/en", req.url));
   }
 
   // podstránky na anglické doméně (např. privacy policy, terms)
-  if (host === EN_HOST && (pathname === "/privacy-policy" || pathname === "/terms-and-conditions")) {
+  if ((EN_ONLY || host === EN_HOST) && (pathname === "/privacy-policy" || pathname === "/terms-and-conditions")) {
     return NextResponse.rewrite(new URL(`/en${pathname}`, req.url));
   }
 

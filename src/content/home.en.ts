@@ -80,6 +80,10 @@ const QUALIFICATIONS = {
 
 export const reviewLinks = [
   {
+    label: "Google",
+    href: "https://maps.app.goo.gl/9KCoj9Cuuz1sDmHg9",
+  },
+  {
     label: "Firmy.cz",
     href: "https://www.firmy.cz/detail/659391-preklady-vranova-praha-zizkov.html",
   },

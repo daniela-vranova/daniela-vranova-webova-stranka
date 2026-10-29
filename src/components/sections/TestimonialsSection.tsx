@@ -1,6 +1,6 @@
 import { Section } from "@/components/layout/Section";
 import { SectionLabel } from "@/components/layout/SectionLabel";
-import { TrustindexWidget } from "@/components/ui/TrustindexWidget";
+import { GoogleReviews } from "@/components/ui/GoogleReviews";
 import { ReviewLinks } from "@/components/ui/ReviewLinks";
 import { getContent, type Locale } from "@/content";
 
@@ -26,7 +26,7 @@ export function TestimonialsSection({ locale }: { locale: Locale }) {
       </div>
 
       <div className="mt-12">
-        <TrustindexWidget />
+        <GoogleReviews locale={locale} />
       </div>
 
       {/* Revize 2. kolo, bod 10.3 — cesta k ověřitelnému plnému znění. */}

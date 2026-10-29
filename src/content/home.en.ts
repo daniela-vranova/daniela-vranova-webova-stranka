@@ -754,3 +754,43 @@ export const stickyBar = {
   call: { label: "Call", href: brand.phone.href },
   form: { label: "Free quote", href: "/#kontakt" },
 } as const;
+
+/** Google reviews (copied from the public profile). */
+export const googleReviews = [
+  {
+    name: "Daniel Gomes",
+    when: "a week ago",
+    avatar: "/reviews/daniel.png",
+    text: "Today I had my theory exam in prague, and daniela was my translator. she is so patient, polite and sweet, to be honest i don’t think i could get a better translator! if you came across this review, and you are thinking about booking her …",
+  },
+  {
+    name: "Jorga -",
+    when: "a week ago",
+    avatar: "/reviews/jorga.png",
+    text: "Working with Ms Vránová is absolutely hassle-free. Quick and always accommodating arrangements, high-quality delivery on time. We thank you on behalf of the whole company and recommend working with her.",
+  },
+  {
+    name: "Simon Duff",
+    when: "2 weeks ago",
+    avatar: "/reviews/simon.png",
+    text: "Daniela was so nice and kind, not only translating my driving test but assisting with calming nerves and answering questions",
+  },
+  {
+    name: "Carlo Lupi",
+    when: "2 weeks ago",
+    avatar: "/reviews/carlo.png",
+    text: "I used Daniela for various document and in person translations for my wedding to a Czech national in Czechia and I would highly recommend her services. She's knowledgeable, prompt with her response and a pleasure to deal with. She …",
+  },
+  {
+    name: "Sirina Agred",
+    when: "3 weeks ago",
+    avatar: "/reviews/sirina.png",
+    text: "Daniela is an excellent translator! She’s kind and clear, she can rephrase anything. Thank you again!",
+  },
+  {
+    name: "Stephane Gauvain",
+    when: "3 weeks ago",
+    avatar: "/reviews/stephane.png",
+    text: "I was thoroughly impressed by Daniela’s skills. She can effortlessly listen to someone talking and translate at the same time, keeping the conversation flowing smoothly. She made the entire experience so comfortable and stress-free. Highly recommended.",
+  },
+] as const;

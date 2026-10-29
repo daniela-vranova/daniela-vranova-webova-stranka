@@ -1105,3 +1105,43 @@ export const stickyBar = {
   call: { label: "Zavolat", href: brand.phone.href },
   form: { label: "Nacenění zdarma", href: "/#kontakt" },
 } as const;
+
+/** Google recenze (opsané z veřejného profilu) – texty přeložené do češtiny. */
+export const googleReviews = [
+  {
+    name: "Daniel Gomes",
+    when: "před týdnem",
+    avatar: "/reviews/daniel.png",
+    text: "Dnes jsem měl v Praze teoretickou zkoušku a Daniela byla moje tlumočnice. Je tak trpělivá, zdvořilá a milá, že upřímně nevěřím, že bych mohl sehnat lepší tlumočnici! Pokud jste narazili na tuto recenzi a uvažujete o tom, že si ji objednáte …",
+  },
+  {
+    name: "Jorga -",
+    when: "před týdnem",
+    avatar: "/reviews/jorga.png",
+    text: "Spolupráce s paní Vránovou je naprosto bezproblémová. Rychlá a vždy vstřícná domluva, kvalitní dodání v termínu. Děkujeme za celou společnost a doporučujeme ke spolupráci",
+  },
+  {
+    name: "Simon Duff",
+    when: "před 2 týdny",
+    avatar: "/reviews/simon.png",
+    text: "Daniela byla moc milá a laskavá – nejen že mi tlumočila u řidičské zkoušky, ale také mi pomohla zklidnit nervy a odpovídala na mé otázky",
+  },
+  {
+    name: "Carlo Lupi",
+    when: "před 2 týdny",
+    avatar: "/reviews/carlo.png",
+    text: "Daniela mi dělala různé překlady dokumentů i tlumočení na místě při mé svatbě s českým občanem v Česku a mohu její služby vřele doporučit. Je znalá, rychle reaguje a je radost s ní jednat. …",
+  },
+  {
+    name: "Sirina Agred",
+    when: "před 3 týdny",
+    avatar: "/reviews/sirina.png",
+    text: "Daniela je výborná překladatelka! Je laskavá a srozumitelná, dokáže přeformulovat cokoli. Ještě jednou děkuji!",
+  },
+  {
+    name: "Stephane Gauvain",
+    when: "před 3 týdny",
+    avatar: "/reviews/stephane.png",
+    text: "Dovednosti Daniely na mě udělaly velký dojem. Dokáže bez problémů poslouchat mluvícího a zároveň tlumočit, takže konverzace plynule běží. Díky ní byl celý zážitek příjemný a bez stresu. Vřele doporučuji.",
+  },
+] as const;
